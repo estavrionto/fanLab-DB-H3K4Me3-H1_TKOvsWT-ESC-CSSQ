@@ -1,11 +1,9 @@
 Module	Section	Sample Name	Source
 FastQC	all_sections	SRR2961594	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961594_fastqc.zip
 FastQC	all_sections	SRR2961593	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961593_fastqc.zip
-FastQC	all_sections	SRR19251834_1	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR19251834_1_fastqc.zip
 FastQC	all_sections	SRR2961602	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961602_fastqc.zip
 FastQC	all_sections	SRR2961599	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961599_fastqc.zip
 FastQC	all_sections	SRR2961601	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961601_fastqc.zip
 FastQC	all_sections	SRR2961598	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961598_fastqc.zip
 FastQC	all_sections	SRR2961597	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961597_fastqc.zip
-FastQC	all_sections	SRR19251834_2	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR19251834_2_fastqc.zip
 FastQC	all_sections	SRR2961600	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961600_fastqc.zip

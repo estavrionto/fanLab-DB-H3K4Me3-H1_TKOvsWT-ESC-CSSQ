@@ -1,11 +1,9 @@
-Sample	Filename	File type	Encoding	Total Sequences	Sequences flagged as poor quality	Sequence length	%GC	total_deduplicated_percentage	avg_sequence_length	basic_statistics	per_base_sequence_quality	per_sequence_quality_scores	per_base_sequence_content	per_sequence_gc_content	per_base_n_content	sequence_length_distribution	sequence_duplication_levels	overrepresented_sequences	adapter_content	per_tile_sequence_quality
-SRR19251834_1	SRR19251834_1.fastq	Conventional base calls	Sanger / Illumina 1.9	431458.0	0.0	300.0	50.0	83.46156106781028	300.0	pass	fail	pass	fail	fail	pass	pass	pass	pass	fail	
-SRR19251834_2	SRR19251834_2.fastq	Conventional base calls	Sanger / Illumina 1.9	431458.0	0.0	300.0	50.0	84.37212037343896	300.0	pass	fail	pass	fail	fail	pass	pass	pass	pass	fail	
-SRR2961593	SRR2961593.fastq	Conventional base calls	Sanger / Illumina 1.9	23898784.0	0.0	101.0	43.0	82.80509963767577	101.0	pass	pass	pass	warn	pass	pass	pass	pass	fail	fail	fail
-SRR2961594	SRR2961594.fastq	Conventional base calls	Sanger / Illumina 1.9	23997364.0	0.0	101.0	43.0	84.96296435468058	101.0	pass	pass	pass	pass	pass	pass	pass	pass	fail	fail	fail
-SRR2961597	SRR2961597.fastq	Conventional base calls	Sanger / Illumina 1.9	18717366.0	0.0	101.0	43.0	88.97961352078299	101.0	pass	pass	pass	pass	pass	pass	pass	pass	fail	fail	fail
-SRR2961598	SRR2961598.fastq	Conventional base calls	Sanger / Illumina 1.9	22682602.0	0.0	101.0	43.0	88.81162908885334	101.0	pass	pass	pass	pass	pass	pass	pass	pass	fail	fail	fail
-SRR2961599	SRR2961599.fastq	Conventional base calls	Sanger / Illumina 1.9	16786723.0	0.0	101.0	45.0	54.42057707001167	101.0	pass	fail	pass	fail	fail	pass	pass	warn	fail	fail	warn
-SRR2961600	SRR2961600.fastq	Conventional base calls	Sanger / Illumina 1.9	34624253.0	0.0	101.0	46.0	59.462352538789254	101.0	pass	fail	pass	fail	fail	pass	pass	warn	fail	fail	warn
-SRR2961601	SRR2961601.fastq	Conventional base calls	Sanger / Illumina 1.9	20223225.0	0.0	101.0	46.0	58.98680373010915	101.0	pass	fail	pass	fail	warn	pass	pass	warn	fail	fail	warn
-SRR2961602	SRR2961602.fastq	Conventional base calls	Sanger / Illumina 1.9	16834181.0	0.0	101.0	46.0	63.249816697270575	101.0	pass	fail	pass	fail	fail	pass	pass	warn	fail	fail	warn
+Sample	Filename	File type	Encoding	Total Sequences	Sequences flagged as poor quality	Sequence length	%GC	total_deduplicated_percentage	avg_sequence_length	basic_statistics	per_base_sequence_quality	per_tile_sequence_quality	per_sequence_quality_scores	per_base_sequence_content	per_sequence_gc_content	per_base_n_content	sequence_length_distribution	sequence_duplication_levels	overrepresented_sequences	adapter_content
+SRR2961593	SRR2961593.fastq	Conventional base calls	Sanger / Illumina 1.9	23898784.0	0.0	101.0	43.0	82.80509963767577	101.0	pass	pass	fail	pass	warn	pass	pass	pass	pass	fail	fail
+SRR2961594	SRR2961594.fastq	Conventional base calls	Sanger / Illumina 1.9	23997364.0	0.0	101.0	43.0	84.96296435468058	101.0	pass	pass	fail	pass	pass	pass	pass	pass	pass	fail	fail
+SRR2961597	SRR2961597.fastq	Conventional base calls	Sanger / Illumina 1.9	18717366.0	0.0	101.0	43.0	88.97961352078299	101.0	pass	pass	fail	pass	pass	pass	pass	pass	pass	fail	fail
+SRR2961598	SRR2961598.fastq	Conventional base calls	Sanger / Illumina 1.9	22682602.0	0.0	101.0	43.0	88.81162908885334	101.0	pass	pass	fail	pass	pass	pass	pass	pass	pass	fail	fail
+SRR2961599	SRR2961599.fastq	Conventional base calls	Sanger / Illumina 1.9	16786723.0	0.0	101.0	45.0	54.42057707001167	101.0	pass	fail	warn	pass	fail	fail	pass	pass	warn	fail	fail
+SRR2961600	SRR2961600.fastq	Conventional base calls	Sanger / Illumina 1.9	34624253.0	0.0	101.0	46.0	59.462352538789254	101.0	pass	fail	warn	pass	fail	fail	pass	pass	warn	fail	fail
+SRR2961601	SRR2961601.fastq	Conventional base calls	Sanger / Illumina 1.9	20223225.0	0.0	101.0	46.0	58.98680373010915	101.0	pass	fail	warn	pass	fail	warn	pass	pass	warn	fail	fail
+SRR2961602	SRR2961602.fastq	Conventional base calls	Sanger / Illumina 1.9	16834181.0	0.0	101.0	46.0	63.249816697270575	101.0	pass	fail	warn	pass	fail	fail	pass	pass	warn	fail	fail
