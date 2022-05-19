@@ -30,7 +30,7 @@ def download_reads():
         'fastq-dump --outdir /opt/fastq/ --split-files /home/[USER]/ncbi/public/sra/SRR925811.sra'
         this_command = ['fasterq-dump','--split-files','--threads','8','--progress','--outdir']
         # print(i)
-        this_command.append(f'./{i[3]}/')
+        this_command.append(f'{reads_dir}{i[3]}/')
         this_command.append(i[1])
         print(execute(this_command))
         # break
