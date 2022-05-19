@@ -10,21 +10,25 @@ Differential Binding sites between H3K4Me3 ChIP-Seq datasets of triple H1 knock-
 2. Create the conda env and activate:
     ```
     <insert command to create the conda env>
-    conda activate assembly
     ```
 3. Download the reads from SRA:
     ```
-    python download_reads.py -m download
+    conda run -n assembly python download_reads.py -m download
     ```
 4. Perform FastQC quality check:
     ```
-    fastqc --threads 6 -o ./fastqc/ ./fastq_reads/*/*.fastq
+    conda run -n assembly fastqc --threads 6 -o ./fastqc/raw/ ./fastq_reads/*.fastq
+    conda run -n assembly fastqc --threads 6 -o ./fastqc/trimmed/ ./trimmed_reads/*.fq
     ```
 5. Perform MultiQC report:
     ```
-    multiqc ./fastqc/ -o ./fastqc/
+    conda run -n assembly multiqc ./fastqc/raw/ -o ./fastqc/raw/
+    conda run -n assembly multiqc ./fastqc/trimmed/ -o ./fastqc/trimmed/
     ```
 6. Analysis of MultiQC report:
 7. Trimming of Adapters:
-8. 
+    ```
+    conda run -n trim_galore trim_galore --cores 2 --output_dir ./trimmed_reads/ ./fastq_reads/*.fastq
+    ```
+9. 
 
