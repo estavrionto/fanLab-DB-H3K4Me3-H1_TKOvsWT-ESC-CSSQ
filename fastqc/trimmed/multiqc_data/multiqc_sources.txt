@@ -1,0 +1,9 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SRR2961597	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961597_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961600	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961600_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961602	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961602_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961593	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961593_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961594	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961594_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961601	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961601_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961598	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961598_trimmed_fastqc.zip
+FastQC	all_sections	SRR2961599	/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/trimmed/SRR2961599_trimmed_fastqc.zip

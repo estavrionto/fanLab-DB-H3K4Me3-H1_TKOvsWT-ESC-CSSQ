@@ -2,14 +2,14 @@
     "report_data_sources": {
         "FastQC": {
             "all_sections": {
-                "SRR2961594": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961594_fastqc.zip",
-                "SRR2961593": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961593_fastqc.zip",
-                "SRR2961602": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961602_fastqc.zip",
-                "SRR2961599": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961599_fastqc.zip",
-                "SRR2961601": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961601_fastqc.zip",
-                "SRR2961598": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961598_fastqc.zip",
-                "SRR2961597": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961597_fastqc.zip",
-                "SRR2961600": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/SRR2961600_fastqc.zip"
+                "SRR2961594": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961594_fastqc.zip",
+                "SRR2961593": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961593_fastqc.zip",
+                "SRR2961602": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961602_fastqc.zip",
+                "SRR2961599": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961599_fastqc.zip",
+                "SRR2961601": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961601_fastqc.zip",
+                "SRR2961598": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961598_fastqc.zip",
+                "SRR2961597": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961597_fastqc.zip",
+                "SRR2961600": "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw/SRR2961600_fastqc.zip"
             }
         }
     },
@@ -181,7 +181,7 @@
             }
         }
     ],
-    "report_multiqc_command": "/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/assembly/bin/multiqc ./fastqc/ -o ./fastqc/",
+    "report_multiqc_command": "/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/assembly/bin/multiqc ./fastqc/raw/ -o ./fastqc/raw/",
     "report_plot_data": {
         "fastqc_sequence_counts_plot": {
             "plot_type": "bar_graph",
@@ -14576,12 +14576,12 @@
         }
     },
     "config_analysis_dir_abs": [
-        "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc"
+        "/storage/coda1/p-yfan32/0/abangaru3/cssq/fanLab-DB-H3K4Me3-H1_TKOvsWT-ESC-CSSQ/fastqc/raw"
     ],
     "config_analysis_dir": [
-        "./fastqc/"
+        "./fastqc/raw/"
     ],
-    "config_creation_date": "2022-05-19, 14:24",
+    "config_creation_date": "2022-05-19, 16:30",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
