@@ -8,4 +8,4 @@ __pycache__/
 *.fq
 
 # Ignore java log
-./core.java.161366.1652982037.atl1-1-02-012-24-l.pace.gatech.edu
+core.java.*
