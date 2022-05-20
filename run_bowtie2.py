@@ -22,10 +22,10 @@ def SVtoLIST(_SVfile,Delimiter):
             reader = csv.reader(fo, delimiter=Delimiter)
             return list(reader)
 
-def execute(Command_list):
-    if args.mode == mode_test:
+def execute(Command_list, var_mode):
+    if var_mode == mode_test:
         return f'Dummy execute: {" ".join(Command_list)}'
-    elif args.mode == mode_actual:
+    elif var_mode == mode_actual:
         return subprocess.run(Command_list,shell=False,text=True)
 
 def run_bowtie2():
@@ -41,7 +41,7 @@ def run_bowtie2():
             '-U',f'./trimmed_reads/{i[2]}',
             '-S',f'./assemblies/{i[3]}.sam'
             ]
-        # print(execute(cmd_bowtie))
+        print(execute(cmd_bowtie,mode_test))
 
 
         print(f'running sam to bam conversion of {i}')
@@ -55,7 +55,14 @@ def run_bowtie2():
             '-bS',f'./assemblies/{i[3]}.sam',
             '-o',f'./assemblies/{i[3]}.bam'
         ]
-        print(execute(cmd_SAMtoBAM))
+        print(execute(cmd_SAMtoBAM,mode_test))
+
+        cmd_mapped_count = [
+            'ls'
+
+        ]
+        print(execute(cmd_mapped_count,args.mode))
+        
         break
 
 
