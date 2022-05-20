@@ -3,14 +3,19 @@ import subprocess
 import argparse
 import os
 
-parser = argparse.ArgumentParser(description='runs bowtie2 using the reads.txt file')
-# adding the required arguments using argparse
-parser.add_argument( '-m', '--mode', help='mode of running', metavar='test/download', default='test', required=True, type=str )
-args = parser.parse_args()
-
 # constants 
 
 reads_dir = './fastq_reads/'
+mode_test = 'test'
+mode_actual = 'run'
+
+# command line arguments 
+parser = argparse.ArgumentParser(description='runs bowtie2 using the reads.txt file')
+# adding the required arguments using argparse
+parser.add_argument( '-m', '--mode', help='mode of running', metavar=f'{mode_test}/{mode_actual}', default=f'{mode_test}', required=True, type=str )
+args = parser.parse_args()
+
+
 
 def SVtoLIST(_SVfile,Delimiter):
     with open(_SVfile, 'r') as fo:
@@ -18,9 +23,9 @@ def SVtoLIST(_SVfile,Delimiter):
             return list(reader)
 
 def execute(Command_list):
-    if args.mode == 'test':
+    if args.mode == mode_test:
         return f'Dummy execute: {" ".join(Command_list)}'
-    elif args.mode == 'download':
+    elif args.mode == mode_actual:
         return subprocess.run(Command_list,shell=False,text=True)
 
 def run_bowtie2():
