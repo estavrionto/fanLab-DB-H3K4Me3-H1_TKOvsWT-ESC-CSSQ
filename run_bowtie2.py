@@ -34,8 +34,9 @@ def run_bowtie2():
         print(f'running assembly of {i}')
         'conda run -n env_bowtie2 bowtie2 --threads 6 -x ../../assembly_indexes/bowtie2/mm9/mm9 -U ./trimmed_reads/SRR2961593_trimmed.fq -S ./assemblies/wt_input.sam'
         this_command = [
-            'conda','run','-n','env_bowtie2',
-            'bowtie2','--threads','6',
+            'conda','run',
+            '--prefix','/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/env_bowtie2',
+            'bowtie2','--threads','12',
             '-x','../../assembly_indexes/bowtie2/mm9/mm9',
             '-U',f'./trimmed_reads/{i[2]}',
             '-S',f'./assemblies/{i[3]}.sam'
