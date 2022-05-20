@@ -15,15 +15,23 @@ parser = argparse.ArgumentParser(description='runs bowtie2 using the reads.txt f
 parser.add_argument( '-m', '--mode', help='mode of running', metavar=f'{mode_test}/{mode_actual}', default=f'{mode_actual}', required=False, type=str )
 args = parser.parse_args()
 
+def LISTto_SV(LIST,Delimiter, _SVfile):
+    with open(_SVfile, 'w') as fo:
+        writer = csv.writer(fo, delimiter = Delimiter)
+        writer.writerows(LIST)
 
 def runProcess(exe):
     # got from https://stackoverflow.com/a/4760274/577088 
-    p = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen(
+        exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        universal_newlines=True,bufsize=1
+        )
     while(True):
         # returns None while subprocess is running
         retcode = p.poll() 
         line = p.stdout.readline()
-        yield line.decode(),retcode
+        print([line])
+        yield line,retcode
         if retcode is not None:
             break
 
@@ -42,11 +50,12 @@ def SVtoLIST(_SVfile,Delimiter):
             return list(reader)
 
 def execute(Command_list, var_mode):
+    log_print(f'executing: {" ".join(Command_list)}')
     if var_mode == mode_test:
         exitcode = {'args':Command_list, 'returncode':None}
-        output_list = [f'Dummy execute: {" ".join(Command_list)}']
+        output_list = [f'Dummy output: {" ".join(Command_list)}']
         for line in output_list:
-            print(f'cmd_out: {line.rstrip()}')
+            log_print(f'cmd_out: {line.rstrip()}')
         log_print(f'exitcode: {exitcode}')
     # elif var_mode == mode_actual:
     #     return subprocess.run(Command_list,shell=False,text=True)
@@ -54,7 +63,7 @@ def execute(Command_list, var_mode):
         output_list = []
         for line, rc in runProcess(Command_list):
             if line != '':
-                print(f'cmd_out: {line.rstrip()}')
+                log_print(f'cmd_out: {line.rstrip()}')
                 output_list.append(line.rstrip())
             retcode = rc
         exitcode = {'args':Command_list, 'returncode':retcode}
@@ -64,6 +73,7 @@ def execute(Command_list, var_mode):
 
 def run_bowtie2():
     reads_info = SVtoLIST('reads.txt','\t')
+    mapped_counts = []
     for i in reads_info:
         print(f'')
         print(f'running assembly of {i}')
@@ -92,13 +102,10 @@ def run_bowtie2():
         execute(cmd_SAMtoBAM,mode_test)
         # set to dynamic later 
 
-        cmd_mapped_count = [
-            'du','-h',
-            '/home/vrionto/anaconda3/envs/',
-            # '/home/vrionto/',
-            '-d','1'
+        cmd_test = ['ls','-alh']
+        execute(cmd_test,args.mode)
 
-        ]
+        
         cmd_mapped_count = [
             'samtools','flagstat',f'./assemblies/{i[3]}.bam'
 
@@ -108,11 +115,16 @@ def run_bowtie2():
         out_counts,ec = execute(cmd_mapped_count,args.mode)
         for l in out_counts:
             if 'mapped' in l:
-                log_print(l.split(' ')[0])
+                mapped_counts.append(
+                    [f'{i[3]}.bam',l.split(" ")[0]])
+                break
 
         
-        break
+        # break
 
+    LISTto_SV(mapped_counts,'\t','H3K4Me3-H1_TKOvsWT_info.txt')
 
 if __name__ == "__main__":
     run_bowtie2()
+    # for i in runProcess(['samtools','flagstat','./assemblies/h1_ip_R2.bam']):
+    #     print(i)
