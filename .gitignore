@@ -6,6 +6,8 @@ __pycache__/
 # Ignore fastq files
 *.fastq
 *.fq
+*.sam
+*.bam
 
 # Ignore java log
 core.java.*
