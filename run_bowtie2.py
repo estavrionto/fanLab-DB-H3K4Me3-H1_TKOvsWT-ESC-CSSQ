@@ -31,6 +31,7 @@ def execute(Command_list):
 def run_bowtie2():
     reads_info = SVtoLIST('reads.txt','\t')
     for i in reads_info:
+        print(f'')
         print(f'running assembly of {i}')
         'conda run -n env_bowtie2 bowtie2 --threads 6 -x ../../assembly_indexes/bowtie2/mm9/mm9 -U ./trimmed_reads/SRR2961593_trimmed.fq -S ./assemblies/wt_input.sam'
         cmd_bowtie = [
@@ -51,12 +52,11 @@ def run_bowtie2():
             '--prefix','/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/assembly',
             'samtools','view',
             '--threads','8',
-            '--verbosity','2',
             '-bS',f'./assemblies/{i[3]}.sam',
             '-o',f'./assemblies/{i[3]}.bam'
         ]
         print(execute(cmd_SAMtoBAM))
-        break
+        # break
 
 
 if __name__ == "__main__":
