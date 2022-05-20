@@ -30,10 +30,11 @@ Differential Binding sites between H3K4Me3 ChIP-Seq datasets of triple H1 knock-
     ```
     conda run -n trim_galore trim_galore --cores 2 --output_dir ./trimmed_reads/ ./fastq_reads/*.fastq
     ```
-8. Alignment using bowtie2:
+8. Alignment using bowtie2 and convert SAM to BAM files:
     ```
+    python run_bowtie2.py -m run
     ```
-9. convert SAM to BAM files:
+9. :
     
 
 10. 
