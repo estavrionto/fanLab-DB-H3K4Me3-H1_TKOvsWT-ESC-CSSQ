@@ -50,24 +50,38 @@ def SVtoLIST(_SVfile,Delimiter):
             return list(reader)
 
 def execute(Command_list, var_mode):
-    log_print(f'executing: {" ".join(Command_list)}')
+    log_print(f'>> executing: {" ".join(Command_list)}')
+    exitcode = {'args':Command_list, 'returncode':None}
     if var_mode == mode_test:
-        exitcode = {'args':Command_list, 'returncode':None}
         output_list = [f'Dummy output: {" ".join(Command_list)}']
         for line in output_list:
-            log_print(f'cmd_out: {line.rstrip()}')
-        log_print(f'exitcode: {exitcode}')
-    # elif var_mode == mode_actual:
-    #     return subprocess.run(Command_list,shell=False,text=True)
+            log_print(f'>>> test mode cmd_out: {line.rstrip()}')
+        log_print(f'>>> test mode exitcode: {exitcode}')
     elif var_mode == mode_actual:
-        output_list = []
-        for line, rc in runProcess(Command_list):
-            if line != '':
-                log_print(f'cmd_out: {line.rstrip()}')
-                output_list.append(line.rstrip())
-            retcode = rc
-        exitcode = {'args':Command_list, 'returncode':retcode}
-        log_print(f'exitcode: {exitcode}')
+        output = subprocess.run(
+            Command_list,
+            shell=False,text=True,
+            stdout = subprocess.PIPE,
+            # capture_output=True,
+            stderr = subprocess.STDOUT
+            )
+        # print(output)
+        output_list = output.stdout.split('\n')
+        for i in output_list:
+            log_print(f'>>>> {i}')
+        exitcode['returncode'] = output.returncode
+    # elif var_mode == mode_actual:
+    #     # all running fine and giving full output in this mode 
+    #     return [[],subprocess.run(Command_list,shell=False,text=True)]
+    # elif var_mode == mode_actual:
+    #     output_list = []
+    #     for line, rc in runProcess(Command_list):
+    #         if line != '':
+    #             log_print(f'cmd_out: {line.rstrip()}')
+    #             output_list.append(line.rstrip())
+    #         retcode = rc
+    #     exitcode['returncode'] = retcode
+    #     log_print(f'exitcode: {exitcode}')
     return output_list,exitcode
 
 
@@ -75,8 +89,8 @@ def run_bowtie2():
     reads_info = SVtoLIST('reads.txt','\t')
     mapped_counts = []
     for i in reads_info:
-        print(f'')
-        print(f'running assembly of {i}')
+        log_print(f'{"#"*20}')
+        log_print(f'> running assembly of {i}')
         'conda run -n env_bowtie2 bowtie2 --threads 6 -x ../../assembly_indexes/bowtie2/mm9/mm9 -U ./trimmed_reads/SRR2961593_trimmed.fq -S ./assemblies/wt_input.sam'
         cmd_bowtie = [
             'conda','run',
@@ -89,9 +103,8 @@ def run_bowtie2():
         execute(cmd_bowtie,mode_test)
         # set to dynamic later 
 
-        print(f'running sam to bam conversion of {i}')
+        log_print(f'> running sam to bam conversion of {i}')
         cmd_SAMtoBAM = [
-
             'conda','run',
             '--prefix','/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/assembly',
             'samtools','view',
@@ -102,22 +115,24 @@ def run_bowtie2():
         execute(cmd_SAMtoBAM,mode_test)
         # set to dynamic later 
 
-        cmd_test = ['ls','-alh']
-        execute(cmd_test,args.mode)
+        # cmd_test = ['ls','-alh']
+        # execute(cmd_test,args.mode)
 
-        
+        log_print(f'> counting mapped reads of {i}')
         cmd_mapped_count = [
-            'samtools','flagstat',f'./assemblies/{i[3]}.bam'
-
+            'conda','run',
+            '--prefix','/storage/home/hcoda1/3/abangaru3/.conda/envs/my_base/envs/assembly',
+            'samtools','flagstat',
+            f'./assemblies/{i[3]}.bam'
         ]
         
         # cmd_mapped_count = ['echo']
         out_counts,ec = execute(cmd_mapped_count,args.mode)
-        for l in out_counts:
-            if 'mapped' in l:
-                mapped_counts.append(
-                    [f'{i[3]}.bam',l.split(" ")[0]])
-                break
+        # for l in out_counts:
+        #     if 'mapped' in l:
+        #         mapped_counts.append(
+        #             [f'{i[3]}.bam',l.split(" ")[0]])
+        #         break
 
         
         # break
