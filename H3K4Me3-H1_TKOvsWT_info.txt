@@ -1,0 +1,8 @@
+wt_input_R1.bam	21364625
+wt_input_R2.bam	21990092
+h1_input_R1.bam	17841281
+h1_input_R2.bam	21643613
+wt_ip_R1.bam	8549344
+wt_ip_R2.bam	20414863
+h1_ip_R1.bam	10614204
+h1_ip_R2.bam	9280619
